@@ -1,15 +1,15 @@
 {
-	"id": "your-module-name",
-	"name": "your-module-name",
-	"shortname": "module-shortname",
-	"description": "A short one line description of your module",
-	"version": "0.0.0",
+	"id": "aver-visca-over-ip",
+	"name": "aver-visca-over-ip",
+	"shortname": "aver-visca-over-ip",
+	"description": "PTZ VISCA commands over IP",
+	"version": "0.1.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/bitfocus/companion-module-your-module-name.git",
-	"bugs": "https://github.com/bitfocus/companion-module-your-module-name/issues",
+	"repository": "git+https://github.com/Colbix/companion-module-aver-visca-over-IP.git",
+	"bugs": "https://github.com/Colbix/companion-module-aver-visca-over-IP/issues",
 	"maintainers": [
 		{
-			"name": "Your name",
+			"name": "Colbix",
 			"email": "Your email"
 		}
 	],
@@ -20,7 +20,7 @@
 		"entrypoint": "../main.js"
 	},
 	"legacyIds": [],
-	"manufacturer": "Your company",
-	"products": ["Your product"],
+	"manufacturer": "No company",
+	"products": ["No products"],
 	"keywords": []
 }
