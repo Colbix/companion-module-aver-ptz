@@ -211,54 +211,7 @@ class ModuleInstance extends InstanceBase {
 
 	updateActions() {
 		UpdateActions(this)
-		const sendVISCACommand = (path, payload) => {
-			var self = this;
-			var buf = Buffer.alloc(32);
-
-			// 0x01 0x00 = VISCA Command
-			buf[0] = 0x01;
-			buf[1] = 0x00;
-
-			self.packet_counter = (self.packet_counter + 1) % 0xFFFFFFFF;
-
-			buf.writeUInt16BE(payload.length, 2);
-			buf.writeUInt32BE(self.packet_counter, 4);
-
-			if (typeof payload == 'string') {
-				buf.write(payload, 8, 'binary');
-			} else if (typeof payload == 'object' && payload instanceof Buffer) {
-				payload.copy(buf, 8);
-			}
-
-			var newbuf = buf.slice(0, 8 + payload.length);
-
-			// udp.send(newbuf);
-
-			debug('sending', newbuf, "to", self.udp.host);
-			self.udp.send(newbuf);
-
-			this.log('debug', `Sending OSC ${this.config.host}:${this.config.port} ${path}`)
-			//this.oscSend(this.config.host, this.config.port, path, args)
-		}
-		this.setActionDefinitions({
-			send_VISCA: {
-				name: 'Send VISCA command',
-				options: [
-					{
-						type: 'textinput',
-						label: 'OSC Path',
-						id: 'path',
-						default: '/osc/path',
-						useVariables: true,
-					},
-				],
-				callback: async (event) => {
-					const path = await this.parseVariablesInString(event.options.path)
-
-					sendVISCACommand(path, [])
-				},
-			}
-		})
+		
 	}
 }
 
