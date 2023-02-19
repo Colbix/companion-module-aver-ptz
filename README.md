@@ -1,9 +1,9 @@
-# companion-module-aver
+# companion-module-aver-visca-over-IP
 A [Bitfocus](https://github.com/bitfocus) Companion version 3.0.0 module.
 
-The purpose of this module is for controlling [AVER](https://averusa.com/products/ptz-camera/) Pan, Tilt, Zoom (PTZ) camera models that support VISCA commands.
+The purpose of this module is for controlling [AVER](https://averusa.com/products/ptz-camera/) Pan, Tilt, Zoom (PTZ) camera models that support VISCA over IP commands. The primary difference with VISCA over IP is the IP packet headers.
 
-Testing VISCA commands includes using an open source software called [PacketSender](https://packetsender.com/). The VISCA commands for models PTZ310/PTZ330, TR530/320 and TR311HN / TR311 / TR313 / TR331 / TR333 can be located within the AVER document[^1]. While the AVER document may not include a specific model at the time it was written the VISCA commands may still work.
+Testing VISCA over IP commands includes using an open source software called [PacketSender](https://packetsender.com/). The VISCA commands for models PTZ310/PTZ330, TR530/320 and TR311HN / TR311 / TR313 / TR331 / TR333 can be located within the AVER document[^1]. While the AVER document may not include a specific model at the time it was written the VISCA commands may still work.
 
 For example, using PacketSender, use the below entries to configure the fields:
 
