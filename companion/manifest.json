@@ -1,7 +1,7 @@
 {
 	"id": "aver-visca-over-ip",
-	"name": "aver-visca-over-ip",
-	"shortname": "aver-visca-over-ip",
+	"name": "aver-visca-over-ip-name",
+	"shortname": "aver-visca-over-ip-shortname",
 	"description": "PTZ VISCA commands over IP",
 	"version": "0.1.0",
 	"license": "MIT",
