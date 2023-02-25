@@ -82,7 +82,7 @@ module.exports = function (self) {
 					default: '3500',
 					choices: [
 						{ id: '3500', label: 'Auto' }, { id: '3504', label: 'ATW' }, { id: '3501', label: 'Indoor' }, { id: '3502', label: 'Outdoor' },
-						{ id: '3503', label: 'One Push WB' }, { id: '3505', label: 'Manual' }, { id: '1005', label: 'One Push' },
+						{ id: '3503', label: 'One Push WB mode' }, { id: '3505', label: 'Manual' }, { id: '1005', label: 'One Push WB trigger' },
 					],
 				},
 
@@ -302,11 +302,11 @@ module.exports = function (self) {
 				self.sendCommand(cmd)
 			},
 		},
-		pan_tilt_drive_action: {
-			name: 'PT Drive',
+		pan_tilt_action: {
+			name: 'Pan Tilt',
 			options: [
 				{
-					id: 'pt_drive',
+					id: 'pan_tilt',
 					type: 'dropdown',
 					label: 'Select Configuration Type',
 					default: '0301',
@@ -334,8 +334,8 @@ module.exports = function (self) {
 				},
 			],
 			callback: async (event) => {
-				var selected = (event.options.pt_drive).toString()
-				console.log(selected)
+				var selected = (event.options.pan_tilt).toString()
+				//console.log(selected)
 				var cmd = ""
 				if(selected === '04' || selected === '05'){
 					cmd = '810106' + selected + 'FF'
@@ -343,7 +343,7 @@ module.exports = function (self) {
 				else{
 					var panInput = (event.options.pan_speed).toString(16).padStart(2, "0");
 					var tiltInput = (event.options.tilt_speed).toString(16).padStart(2, "0");
-					cmd = '810106' + selected + panInput + tiltInput + 'FF'
+					cmd = '81010601' + panInput + tiltInput + selected + 'FF'
 				}
 				//console.log(cmd)
 				self.sendCommand(cmd)

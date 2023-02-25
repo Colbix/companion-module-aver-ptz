@@ -1,6 +1,7 @@
 const { InstanceBase, Regex, runEntrypoint, InstanceStatus, UDPHelper } = require('@companion-module/base')
 const UpgradeScripts = require('./upgrades')
 const UpdateActions = require('./actions')
+const UpdatePresets = require('./presets.js')
 
 function createSocket() {
 	console.log('Hello from UDP');
@@ -19,6 +20,7 @@ class ModuleInstance extends InstanceBase {
 		await this.init_udp()
 		this.updateStatus(InstanceStatus.Ok)
 		this.updateActions() // export actions
+		this.updatePresets()
 	}
 
 	init_udp() {
@@ -38,7 +40,7 @@ class ModuleInstance extends InstanceBase {
 				//this is the main settings information
 				this.updateData(Uint8Array.from(data))
 			}
-			console.log(hexString)
+			//console.log(hexString)
 		})
 	}
 
@@ -53,7 +55,7 @@ class ModuleInstance extends InstanceBase {
 
 		var cmdBuff = Buffer.from(newPayload, 'hex')
 
-		console.log(cmdBuff)
+		//console.log(cmdBuff)
 		
 		this.udp.send(cmdBuff)
 		//.then(function(response){console.log(response)})
@@ -74,6 +76,7 @@ class ModuleInstance extends InstanceBase {
 	async configUpdated(config) {
 		this.config = config
 		await this.init_udp()
+		this.updatePresets()
 	}
 
 	// Return config fields for web config
@@ -113,6 +116,9 @@ class ModuleInstance extends InstanceBase {
 	updateActions() {
 		UpdateActions(this)
 	}
-}
 
+	updatePresets(){
+		UpdatePresets(this)
+	}
+}
 runEntrypoint(ModuleInstance, UpgradeScripts)
