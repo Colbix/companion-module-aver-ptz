@@ -1,4 +1,4 @@
-# companion-module-aver-visca-over-IP
+# companion-module-aver-ptz
 A [Bitfocus](https://github.com/bitfocus) Companion version 3.0.0 module.
 
 The purpose of this module is for controlling [AVER](https://averusa.com/products/ptz-camera/) Pan, Tilt, Zoom (PTZ) camera models that support VISCA commands over IP. The primary difference with VISCA commands and VISCA over IP are the IP packet headers.
