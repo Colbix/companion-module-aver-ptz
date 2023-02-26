@@ -3,12 +3,6 @@ const UpgradeScripts = require('./upgrades')
 const UpdateActions = require('./actions')
 const UpdatePresets = require('./presets.js')
 
-function createSocket() {
-	console.log('Hello from UDP');
-	//var s = dgram.createSocket('udp4');
-	//s.send(Buffer.from('Hello'), this.config.PORT, this.config.IP );
-}
-
 class ModuleInstance extends InstanceBase {
 	constructor(internal) {
 		super(internal)
