@@ -5,12 +5,12 @@
 	"description": "PTZ VISCA commands over IP",
 	"version": "0.1.0",
 	"license": "MIT",
-	"repository": "git+https://github.com/Colbix/companion-module-aver-visca-over-IP.git",
-	"bugs": "https://github.com/Colbix/companion-module-aver-visca-over-IP/issues",
+	"repository": "git+https://github.com/Colbix/companion-module-aver-ptz.git",
+	"bugs": "https://github.com/Colbix/companion-module-aver-ptz/issues",
 	"maintainers": [
 		{
 			"name": "Colbix",
-			"email": "Your email"
+			"email": "pTYhd4QzzA@proton.me"
 		}
 	],
 	"runtime": {
@@ -21,6 +21,6 @@
 	},
 	"legacyIds": [],
 	"manufacturer": "Aver",
-	"products": ["VISCA over IP"],
+	"products": ["PTZ"],
 	"keywords": []
 }
